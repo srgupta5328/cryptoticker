@@ -1,6 +1,6 @@
-FROM golang:onbuild
-RUN mkdir /crpytogoticker
-ADD . /app/ 
-WORKDIR /app 
-RUN go build -o main . 
-CMD ["/app/main"]
+FROM golang:1.8
+WORKDIR /go/src/personalRepo/cryptogopherticker
+COPY /go/src/personalRepo/cryptogopherticker
+RUN go get -d -v /go/src/personalRepo/cryptogopherticker
+RUN go install -v /go/src/personalRepo/cryptogopherticker
+CMD ["cryptogopherticker"]
