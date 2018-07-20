@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 var (
@@ -30,7 +31,7 @@ func (conf *Config) GlobalHandler(w http.ResponseWriter, r *http.Request) {
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		fmt.Println("Cliend couldn't complete the request")
+		fmt.Println("Client couldn't complete the request")
 	}
 
 	defer res.Body.Close()
