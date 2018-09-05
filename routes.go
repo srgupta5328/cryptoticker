@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Route struct {
 	Name        string
 	Method      string
-	ApiURL      string
+	APIURL      string
 	HandlerFunc http.HandlerFunc
 }
 
@@ -53,7 +54,7 @@ func (conf *Config) NewRouter() *mux.Router {
 	for _, marketRoute := range marketRoutes {
 		router.
 			Methods(marketRoute.Method).
-			Path(marketRoute.ApiURL).
+			Path(marketRoute.APIURL).
 			Name(marketRoute.Name).
 			Handler(marketRoute.HandlerFunc)
 	}
