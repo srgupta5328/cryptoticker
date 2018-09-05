@@ -45,7 +45,7 @@ func (conf *Config) NewRouter() *mux.Router {
 		Route{
 			"Index",
 			"GET",
-			"index",
+			"/home",
 			indexHandler,
 		},
 	}
